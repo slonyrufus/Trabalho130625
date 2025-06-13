@@ -1,12 +1,122 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|c:\\users\\slony\\source\\repos\\hospitalvidaplenahospisim\\hospitalvidaplenahospisim\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|solutionrelative:hospitalvidaplenahospisim\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|c:\\users\\slony\\source\\repos\\hospitalvidaplenahospisim\\hospitalvidaplenahospisim\\controllers\\prescricaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|solutionrelative:hospitalvidaplenahospisim\\controllers\\prescricaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|c:\\users\\slony\\source\\repos\\hospitalvidaplenahospisim\\hospitalvidaplenahospisim\\controllers\\altahospitalarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|solutionrelative:hospitalvidaplenahospisim\\controllers\\altahospitalarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|c:\\users\\slony\\source\\repos\\hospitalvidaplenahospisim\\hospitalvidaplenahospisim\\controllers\\prontuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|solutionrelative:hospitalvidaplenahospisim\\controllers\\prontuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|c:\\users\\slony\\source\\repos\\hospitalvidaplenahospisim\\hospitalvidaplenahospisim\\views\\prescricao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|solutionrelative:hospitalvidaplenahospisim\\views\\prescricao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|c:\\users\\slony\\source\\repos\\hospitalvidaplenahospisim\\hospitalvidaplenahospisim\\views\\prescricao\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8085430A-638A-47FA-9A04-4676EF616387}|HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM.csproj|solutionrelative:hospitalvidaplenahospisim\\views\\prescricao\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Program.cs",
+              "RelativeDocumentMoniker": "HospitalVidaPlenaHOSPISIM\\Program.cs",
+              "ToolTip": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Program.cs",
+              "RelativeToolTip": "HospitalVidaPlenaHOSPISIM\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAcwDMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T12:39:40.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AltaHospitalarController.cs",
+              "DocumentMoniker": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Controllers\\AltaHospitalarController.cs",
+              "RelativeDocumentMoniker": "HospitalVidaPlenaHOSPISIM\\Controllers\\AltaHospitalarController.cs",
+              "ToolTip": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Controllers\\AltaHospitalarController.cs",
+              "RelativeToolTip": "HospitalVidaPlenaHOSPISIM\\Controllers\\AltaHospitalarController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T12:32:04.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProntuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Controllers\\ProntuarioController.cs",
+              "RelativeDocumentMoniker": "HospitalVidaPlenaHOSPISIM\\Controllers\\ProntuarioController.cs",
+              "ToolTip": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Controllers\\ProntuarioController.cs",
+              "RelativeToolTip": "HospitalVidaPlenaHOSPISIM\\Controllers\\ProntuarioController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAIAwwEgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T12:31:14.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PrescricaoController.cs",
+              "DocumentMoniker": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Controllers\\PrescricaoController.cs",
+              "RelativeDocumentMoniker": "HospitalVidaPlenaHOSPISIM\\Controllers\\PrescricaoController.cs",
+              "ToolTip": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Controllers\\PrescricaoController.cs",
+              "RelativeToolTip": "HospitalVidaPlenaHOSPISIM\\Controllers\\PrescricaoController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAE0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T12:28:02.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Views\\Prescricao\\Edit.cshtml",
+              "RelativeDocumentMoniker": "HospitalVidaPlenaHOSPISIM\\Views\\Prescricao\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Views\\Prescricao\\Edit.cshtml",
+              "RelativeToolTip": "HospitalVidaPlenaHOSPISIM\\Views\\Prescricao\\Edit.cshtml",
+              "ViewState": "AgIAAFQBAAAAAAAAAAAAAHEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T12:26:46.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Views\\Prescricao\\Create.cshtml",
+              "RelativeDocumentMoniker": "HospitalVidaPlenaHOSPISIM\\Views\\Prescricao\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Slony\\source\\repos\\HospitalVidaPlenaHOSPISIM\\HospitalVidaPlenaHOSPISIM\\Views\\Prescricao\\Create.cshtml",
+              "RelativeToolTip": "HospitalVidaPlenaHOSPISIM\\Views\\Prescricao\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T12:26:45.672Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

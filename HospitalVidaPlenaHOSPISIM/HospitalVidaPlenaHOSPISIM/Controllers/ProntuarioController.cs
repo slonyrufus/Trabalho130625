@@ -39,7 +39,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.PacienteId = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(_context.Pacientes, "Id", "NomeCompleto");
+            ViewBag.PacienteId = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(_context.Pacientes.ToList(), "Id", "NomeCompleto");
             return View();
         }
 
@@ -55,7 +55,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PacienteId = new SelectList(_context.Pacientes, "Id", "NomeCompleto", prontuario.PacienteId);
+            ViewBag.PacienteId = new SelectList(_context.Pacientes.ToList(), "Id", "NomeCompleto", prontuario.PacienteId);
             return View(prontuario);
         }
 
@@ -66,7 +66,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
             var prontuario = _context.Prontuarios.Find(id);
             if (prontuario == null) return NotFound();
 
-            ViewBag.PacienteId = new SelectList(_context.Pacientes, "Id", "NomeCompleto", prontuario.PacienteId);
+            ViewBag.PacienteId = new SelectList(_context.Pacientes.ToList(), "Id", "NomeCompleto", prontuario.PacienteId);
             return View(prontuario);
         }
 
@@ -81,7 +81,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PacienteId = new SelectList(_context.Pacientes, "Id", "NomeCompleto", prontuario.PacienteId);
+            ViewBag.PacienteId = new SelectList(_context.Pacientes.ToList(), "Id", "NomeCompleto", prontuario.PacienteId);
             return View(prontuario);
         }
 

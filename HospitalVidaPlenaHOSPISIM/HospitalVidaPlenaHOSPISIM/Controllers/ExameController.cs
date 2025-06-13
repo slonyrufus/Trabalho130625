@@ -37,7 +37,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.Atendimentos = new SelectList(_context.Atendimentos, "Id", "Status");
+            ViewBag.Atendimentos = new SelectList(_context.Atendimentos.ToList(), "Id", "Status");
             return View();
         }
 
@@ -53,7 +53,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Status", exame.AtendimentoId);
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "Status", exame.AtendimentoId);
             return View(exame);
         }
 
@@ -64,7 +64,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
             var exame = _context.Exames.Find(id);
             if (exame == null) return NotFound();
 
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Status", exame.AtendimentoId);
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "Status", exame.AtendimentoId);
             return View(exame);
         }
 
@@ -79,7 +79,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Status", exame.AtendimentoId);
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "Status", exame.AtendimentoId);
             return View(exame);
         }
 

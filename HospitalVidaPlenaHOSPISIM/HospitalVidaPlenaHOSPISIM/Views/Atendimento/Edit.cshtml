@@ -413,7 +413,7 @@
         }
     </div>
 
-    <div class="toast" id="toast">Formulário enviado com sucesso!</div>
+    <div class="toast" id="toast" style="display:none;">Formulário enviado com sucesso!</div>
 
     <script>
         const form = document.getElementById('atendimento-form');
@@ -432,7 +432,11 @@
             }, 5000);
         });
 
-        cancelarBtn.addEventListener('click', event => {
+        cancelarBtn.addEventListener("click", event => {
+            event.preventDefault();
+            let parts = window.location.pathname.split("/").filter(e => e.length > 0);
+            parts.pop();
+            window.location.href = "/" + parts.join("/");
         });
     </script>
 </body>

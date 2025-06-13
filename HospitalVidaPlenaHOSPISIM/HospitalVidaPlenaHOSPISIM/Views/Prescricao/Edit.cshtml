@@ -52,7 +52,7 @@
 
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: "Inter", sans-serif;
             background: #f4f7fb;
             color: #1e293b;
             line-height: 1.6;
@@ -350,76 +350,150 @@
     </ul>
 </nav>
 
-<h1>@ViewBag.Title</h1>
+<body>
+    <div class="form-container">
+        <h1>Editar Prescrição</h1>
+        @using (Html.BeginForm("Edit", "Prescricao", FormMethod.Post, new { @id = "prescricao-form" }))
+        {
+            @Html.HiddenFor(m => m.Id)
 
-<form asp-action="Edit">
-    <input type="hidden" asp-for="Id" />
-    <div class="form-group">
-        <label asp-for="Medicamento" class="control-label"></label>
-        <input asp-for="Medicamento" class="form-control" />
-        <span asp-validation-for="Medicamento" class="text-danger"></span>
+            <div class="form-group">
+                @Html.LabelFor(m => m.AtendimentoId, "Atendimento:")
+                @Html.DropDownListFor(
+                    m => m.AtendimentoId,
+                    (SelectList)ViewBag.Atendimentos,
+                    "Selecione o atendimento",
+                    new { @class = "form-control", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.AtendimentoId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ProfissionalId, "Profissional:")
+                @Html.DropDownListFor(
+                    m => m.ProfissionalId,
+                    (SelectList)ViewBag.Profissionais,
+                    "Selecione o profissional",
+                    new { @class = "form-control", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.ProfissionalId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Medicamento, "Medicamento:")
+                @Html.TextBoxFor(
+                    m => m.Medicamento,
+                    new { @class = "form-control", placeholder = "Nome do medicamento", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.Medicamento, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Dosagem, "Dosagem:")
+                @Html.TextBoxFor(
+                    m => m.Dosagem,
+                    new { @class = "form-control", placeholder = "Ex: 500mg", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.Dosagem, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Frequencia, "Frequência:")
+                @Html.TextBoxFor(
+                    m => m.Frequencia,
+                    new { @class = "form-control", placeholder = "Ex: 2 vezes ao dia", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.Frequencia, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ViaAdministracao, "Via de Administração:")
+                @Html.TextBoxFor(
+                    m => m.ViaAdministracao,
+                    new { @class = "form-control", placeholder = "Ex: Oral, Intravenosa", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.ViaAdministracao, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.DataInicio, "Data de Início:")
+                @Html.TextBoxFor(
+                    m => m.DataInicio,
+                    "{0:yyyy-MM-ddTHH:mm}",
+                    new { @type = "datetime-local", @class = "form-control", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.DataInicio, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.DataFim, "Data de Fim:")
+                @Html.TextBoxFor(
+                    m => m.DataFim,
+                    "{0:yyyy-MM-ddTHH:mm}",
+                    new { @type = "datetime-local", @class = "form-control" }
+                )
+                @Html.ValidationMessageFor(m => m.DataFim, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Observacoes, "Observações:")
+                @Html.TextAreaFor(
+                    m => m.Observacoes,
+                    new { @class = "form-control", rows = 3, placeholder = "Observações sobre a prescrição", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.Observacoes, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.StatusPrescricao, "Status da Prescrição:")
+                @Html.DropDownListFor(
+                    m => m.StatusPrescricao,
+                    new SelectList(new[] { "ATIVA", "ENCERRADA", "SUSPENSA" }),
+                    "Selecione o status",
+                    new { @class = "form-control", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.StatusPrescricao, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ReacoesAdversas, "Reações Adversas:")
+                @Html.TextAreaFor(
+                    m => m.ReacoesAdversas,
+                    new { @class = "form-control", rows = 2, placeholder = "Descreva se houveram reações adversas" }
+                )
+                @Html.ValidationMessageFor(m => m.ReacoesAdversas, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary" aria-label="Salvar prescrição">Salvar</button>
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn-secondary", @id = "cancelar", aria_label = "Cancelar" })
+            </div>
+        }
     </div>
+</body>
 
-    <div class="form-group">
-        <label asp-for="Dosagem" class="control-label"></label>
-        <input asp-for="Dosagem" class="form-control" />
-        <span asp-validation-for="Dosagem" class="text-danger"></span>
-    </div>
+<div class="toast" id="toast">Formulário enviado com sucesso!</div>
+<script>
+    let form = document.getElementById('exame-form');
+    let toast = document.getElementById('toast');
+    let cancelarBtn = document.getElementById('cancelar');
+    let lastUrl = window.location.pathname.split("/").filter(e => e.length > 0);
+    lastUrl.pop();
+    form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            form.reportValidity();
+            return;
+        }
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+            window.location.href = "/" + lastUrl.join("/");
+        }, 5000);
+    });
 
-    <div class="form-group">
-        <label asp-for="Frequencia" class="control-label"></label>
-        <input asp-for="Frequencia" class="form-control" />
-        <span asp-validation-for="Frequencia" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="ViaAdministracao" class="control-label"></label>
-        <input asp-for="ViaAdministracao" class="form-control" />
-        <span asp-validation-for="ViaAdministracao" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="DataInicio" class="control-label"></label>
-        <input asp-for="DataInicio" type="date" class="form-control" />
-        <span asp-validation-for="DataInicio" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="DataFim" class="control-label"></label>
-        <input asp-for="DataFim" type="date" class="form-control" />
-        <span asp-validation-for="DataFim" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Observacoes" class="control-label"></label>
-        <textarea asp-for="Observacoes" class="form-control"></textarea>
-        <span asp-validation-for="Observacoes" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="StatusPrescricao" class="control-label"></label>
-        <input asp-for="StatusPrescricao" class="form-control" />
-        <span asp-validation-for="StatusPrescricao" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="ReacoesAdversas" class="control-label"></label>
-        <textarea asp-for="ReacoesAdversas" class="form-control"></textarea>
-        <span asp-validation-for="ReacoesAdversas" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="AtendimentoId" class="control-label"></label>
-        <input asp-for="AtendimentoId" class="form-control" />
-        <span asp-validation-for="AtendimentoId" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="ProfissionalId" class="control-label"></label>
-        <input asp-for="ProfissionalId" class="form-control" />
-        <span asp-validation-for="ProfissionalId" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Salvar</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-</form>
+    cancelarBtn.addEventListener("click", event => {
+        event.preventDefault();
+        window.location.href = "/" + lastUrl.join("/");
+    });
+</script>

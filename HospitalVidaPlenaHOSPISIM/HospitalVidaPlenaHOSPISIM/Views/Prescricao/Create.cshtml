@@ -358,7 +358,6 @@
 
             <h1>@ViewBag.Title</h1>
 
-            @* Hidden para o Id da prescrição *@
             @Html.HiddenFor(m => m.Id)
 
             <div class="form-group">
@@ -444,25 +443,27 @@
         }
     </div>
 </main>
+<script>
+    let form = document.getElementById('exame-form');
+    let toast = document.getElementById('toast');
+    let cancelarBtn = document.getElementById('cancelar');
+    let lastUrl = window.location.pathname.split("/").filter(e => e.length > 0);
+    lastUrl.pop();
+    form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            form.reportValidity();
+            return;
+        }
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+            window.location.href = "/" + lastUrl.join("/");
+        }, 5000);
+    });
 
-
-    <script>
-        const form = document.getElementById('prescricao-form');
-        const toast = document.getElementById('toast');
-        const cancelarBtn = document.getElementById('cancelar');
-
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                form.reportValidity();
-                return;
-            }
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 5000);
-        });
-
-        cancelarBtn.addEventListener('click', event => {
-        });
-    </script>
+    cancelarBtn.addEventListener("click", event => {
+        event.preventDefault();
+        window.location.href = "/" + lastUrl.join("/");
+    });
+</script>

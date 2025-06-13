@@ -38,11 +38,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
 
         public IActionResult Create()
         {
-            var profissionais = _context.ProfissionaisSaude.ToList();
-            var prontuarios = _context.Prontuarios.ToList();
-
-            ViewBag.Prontuarios = new SelectList(prontuarios, "Id", "NumeroProntuario");
-            ViewBag.Profissionais = new SelectList(profissionais, "Id", "NomeCompleto");
+            ViewBag.Prontuarios = new SelectList(_context.ProfissionaisSaude.ToList(), "Id", "NumeroProntuario");
+            ViewBag.Profissionais = new SelectList(_context.Prontuarios.ToList(), "Id", "NomeCompleto");
             return View();
         }
 
@@ -58,8 +55,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude, "Id", "NomeCompleto", atendimento.ProfissionalId);
-            ViewBag.ProntuarioId = new SelectList(_context.Prontuarios, "Id", "NumeroProntuario", atendimento.ProntuarioId);
+            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude.ToList(), "Id", "NomeCompleto", atendimento.ProfissionalId);
+            ViewBag.ProntuarioId = new SelectList(_context.Prontuarios.ToList(), "Id", "NumeroProntuario", atendimento.ProntuarioId);
             return View(atendimento);
         }
 
@@ -70,8 +67,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
             var atendimento = _context.Atendimentos.Find(id);
             if (atendimento == null) return NotFound();
 
-            ViewBag.ProntuarioId = new SelectList(_context.Prontuarios, "Id", "NumeroProntuario", atendimento.ProntuarioId);
-            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude, "Id", "NomeCompleto", atendimento.ProfissionalId);
+            ViewBag.ProntuarioId = new SelectList(_context.Prontuarios.ToList(), "Id", "NumeroProntuario", atendimento.ProntuarioId);
+            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude.ToList(), "Id", "NomeCompleto", atendimento.ProfissionalId);
             return View(atendimento);
         }
 
@@ -86,8 +83,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProntuarioId = new SelectList(_context.Prontuarios, "Id", "NumeroProntuario", atendimento.ProntuarioId);
-            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude, "Id", "NomeCompleto", atendimento.ProfissionalId);
+            ViewBag.ProntuarioId = new SelectList(_context.Prontuarios.ToList(), "Id", "NumeroProntuario", atendimento.ProntuarioId);
+            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude.ToList(), "Id", "NomeCompleto", atendimento.ProfissionalId);
             return View(atendimento);
         }
 

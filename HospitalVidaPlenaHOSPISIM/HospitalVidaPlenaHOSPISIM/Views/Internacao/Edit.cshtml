@@ -350,7 +350,7 @@
     </ul>
 </nav>
 
-<body>
+<main>
     <div class="form-container">
         <h1>Editar Internação</h1>
         @using (Html.BeginForm("Edit", "Internacao", FormMethod.Post, new { @id = "internacao-form" }))
@@ -470,38 +470,15 @@
             </div>
         }
     </div>
+</main>
 
-    <div class="toast" id="toast">Formulário enviado com sucesso!</div>
-
-    <script>
-        const form = document.getElementById('internacao-form');
-        const toast = document.getElementById('toast');
-        const cancelarBtn = document.getElementById('cancelar');
-
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                form.reportValidity();
-                return;
-            }
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 5000);
-        });
-
-        cancelarBtn.addEventListener('click', event => {
-            // ação customizada opcional
-        });
-    </script>
-</body>
-
-
+<div class="toast" id="toast" style="display:none;">Formulário enviado com sucesso!</div>
 <script>
-    const form = document.getElementById('internacao-form');
-    const toast = document.getElementById('toast');
-    const cancelarBtn = document.getElementById('cancelar');
-
+    let form = document.getElementById('exame-form');
+    let toast = document.getElementById('toast');
+    let cancelarBtn = document.getElementById('cancelar');
+    let lastUrl = window.location.pathname.split("/").filter(e => e.length > 0);
+    lastUrl.pop();
     form.addEventListener('submit', event => {
         if (!form.checkValidity()) {
             event.preventDefault();
@@ -511,9 +488,12 @@
         toast.classList.add('show');
         setTimeout(() => {
             toast.classList.remove('show');
+            window.location.href = "/" + lastUrl.join("/");
         }, 5000);
     });
 
-    cancelarBtn.addEventListener('click', event => {
+    cancelarBtn.addEventListener("click", event => {
+        event.preventDefault();
+        window.location.href = "/" + lastUrl.join("/");
     });
 </script>

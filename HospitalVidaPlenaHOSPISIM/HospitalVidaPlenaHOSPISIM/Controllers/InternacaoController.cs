@@ -41,8 +41,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.PacienteId = new SelectList(_context.Pacientes, "Id", "NomeCompleto");
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Id");
+            ViewBag.PacienteId = new SelectList(_context.Pacientes.ToList(), "Id", "NomeCompleto");
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "Id");
             return View();
         }
 
@@ -58,8 +58,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PacienteId = new SelectList(_context.Pacientes, "Id", "NomeCompleto", internacao.PacienteId);
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Id", internacao.AtendimentoId);
+            ViewBag.PacienteId = new SelectList(_context.Pacientes.ToList(), "Id", "NomeCompleto", internacao.PacienteId);
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "Id", internacao.AtendimentoId);
             return View(internacao);
         }
 
@@ -70,8 +70,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
             var internacao = _context.Internacoes.Find(id);
             if (internacao == null) return NotFound();
 
-            ViewBag.PacienteId = new SelectList(_context.Pacientes, "Id", "NomeCompleto", internacao.PacienteId);
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Id", internacao.AtendimentoId);
+            ViewBag.PacienteId = new SelectList(_context.Pacientes.ToList(), "Id", "NomeCompleto", internacao.PacienteId);
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "Id", internacao.AtendimentoId);
             return View(internacao);
         }
 
@@ -86,8 +86,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.PacienteId = new SelectList(_context.Pacientes, "Id", "NomeCompleto", internacao.PacienteId);
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Id", internacao.AtendimentoId);
+            ViewBag.PacienteId = new SelectList(_context.Pacientes.ToList(), "Id", "NomeCompleto", internacao.PacienteId);
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "Id", internacao.AtendimentoId);
             return View(internacao);
         }
 

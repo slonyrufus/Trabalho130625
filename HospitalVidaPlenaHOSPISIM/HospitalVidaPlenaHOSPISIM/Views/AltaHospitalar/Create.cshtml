@@ -103,6 +103,12 @@
             margin-bottom: 24px;
         }
 
+        main h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #1e293b;
+        }
+
         .logo {
             display: flex;
             align-items: center;
@@ -200,12 +206,6 @@
             padding: 32px 48px;
             max-width: 960px;
             margin: 0 auto;
-        }
-
-        main h1 {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-            color: #1e293b;
         }
 
         main p {
@@ -402,24 +402,27 @@
 </div>
 
 <div class="toast" id="toast" style="display:none;">Alta hospitalar registrada com sucesso!</div>
+<script>
+    let form = document.getElementById('exame-form');
+    let toast = document.getElementById('toast');
+    let cancelarBtn = document.getElementById('cancelar');
+    let lastUrl = window.location.pathname.split("/").filter(e => e.length > 0);
+    lastUrl.pop();
+    form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            form.reportValidity();
+            return;
+        }
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+            window.location.href = "/" + lastUrl.join("/");
+        }, 5000);
+    });
 
-    <script>
-        const form = document.getElementById('alta-form');
-        const toast = document.getElementById('toast');
-        const cancelarBtn = document.getElementById('cancelar');
-
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                form.reportValidity();
-                return;
-            }
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 5000);
-        });
-
-        cancelarBtn.addEventListener('click', event => {
-        });
-    </script>
+    cancelarBtn.addEventListener("click", event => {
+        event.preventDefault();
+        window.location.href = "/" + lastUrl.join("/");
+    });
+</script>

@@ -40,8 +40,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude, "Id", "NomeCompleto");
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "AlgumCampoDescricao");
+            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude.ToList(), "Id", "NomeCompleto");
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "AlgumCampoDescricao");
             return View();
         }
 
@@ -57,20 +57,20 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude, "Id", "NomeCompleto", prescricao.ProfissionalId);
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "AlgumCampoDescricao", prescricao.AtendimentoId);
+            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude.ToList(), "Id", "NomeCompleto", prescricao.ProfissionalId);
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "AlgumCampoDescricao", prescricao.AtendimentoId);
             return View(prescricao);
         }
 
-        public IActionResult Edit(Guid? id)
+        public async Task<IActionResult> Edit(Guid? id)
         {
             if (id == null) return BadRequest();
 
-            var prescricao = _context.Prescricoes.Find(id);
+            var prescricao = await _context.Prescricoes.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id.Value);
             if (prescricao == null) return NotFound();
 
-            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude, "Id", "NomeCompleto", prescricao.ProfissionalId);
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Descricao", prescricao.AtendimentoId);
+            ViewBag.Profissionais = new SelectList(await _context.ProfissionaisSaude.ToListAsync(), "Id", "NomeCompleto", prescricao.ProfissionalId);
+            ViewBag.Atendimentos = new SelectList(await _context.Atendimentos.ToListAsync(), "Id", "Descricao", prescricao.AtendimentoId);
             return View(prescricao);
         }
 
@@ -85,8 +85,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude, "Id", "NomeCompleto", prescricao.ProfissionalId);
-            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos, "Id", "Descricao", prescricao.AtendimentoId);
+            ViewBag.ProfissionalId = new SelectList(_context.ProfissionaisSaude.ToList(), "Id", "NomeCompleto", prescricao.ProfissionalId);
+            ViewBag.AtendimentoId = new SelectList(_context.Atendimentos.ToList(), "Id", "Descricao", prescricao.AtendimentoId);
             return View(prescricao);
         }
 

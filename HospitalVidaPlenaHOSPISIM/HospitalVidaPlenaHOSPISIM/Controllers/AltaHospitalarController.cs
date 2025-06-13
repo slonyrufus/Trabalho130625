@@ -36,8 +36,8 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.Internacoes = new SelectList(_context.Internacoes, "Id", "MotivoInternacao");
-            ViewBag.Prontuarios = new SelectList(_context.Prontuarios, "Id", "Numero");
+            ViewBag.Internacoes = new SelectList(_context.Internacoes.ToList(), "Id", "MotivoInternacao");
+            ViewBag.Prontuarios = new SelectList(_context.Prontuarios.ToList(), "Id", "Numero");
             return View();
         }
 
@@ -53,7 +53,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.InternacaoId = new SelectList(_context.Internacoes, "Id", "MotivoInternacao", alta.InternacaoId);
+            ViewBag.InternacaoId = new SelectList(_context.Internacoes.ToList(), "Id", "MotivoInternacao", alta.InternacaoId);
             return View(alta);
         }
 
@@ -64,7 +64,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
             var alta = _context.AltasHospitalares.Find(id);
             if (alta == null) return NotFound();
 
-            ViewBag.InternacaoId = new SelectList(_context.Internacoes, "Id", "MotivoInternacao", alta.InternacaoId);
+            ViewBag.InternacaoId = new SelectList(_context.Internacoes.ToList(), "Id", "MotivoInternacao", alta.InternacaoId);
             return View(alta);
         }
 
@@ -79,7 +79,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.InternacaoId = new SelectList(_context.Internacoes, "Id", "MotivoInternacao", alta.InternacaoId);
+            ViewBag.InternacaoId = new SelectList(_context.Internacoes.ToList(), "Id", "MotivoInternacao", alta.InternacaoId);
             return View(alta);
         }
 

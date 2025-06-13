@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using HospitalVidaPlenaHOSPISIM.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -54,7 +56,7 @@ namespace HospitalVidaPlenaHOSPISIM.Controllers
             if (id == null) return BadRequest();
             var profissional = _context.ProfissionaisSaude.Find(id);
             if (profissional == null) return NotFound();
-            ViewBag.Especialidades = new SelectList(_context.Especialidades, "Id", "Nome", profissional.EspecialidadeId);
+            ViewBag.Especialidades = new SelectList(_context.Especialidades.ToList(), "Id", "Nome", profissional.EspecialidadeId);
             return View(profissional);
         }
 

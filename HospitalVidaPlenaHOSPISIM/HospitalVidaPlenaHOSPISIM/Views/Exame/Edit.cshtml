@@ -350,7 +350,7 @@
     </ul>
 </nav>
 
-<body>
+<main>
     <div class="form-container">
         <h1>Editar Exame</h1>
         @using (Html.BeginForm("Edit", "Exame", FormMethod.Post, new { @id = "exame-form" }))
@@ -413,28 +413,30 @@
             </div>
         }
     </div>
+</main>
 
-    <div class="toast" id="toast">Exame atualizado com sucesso!</div>
+<div class="toast" id="toast" style="display:none;">Exame atualizado com sucesso!</div>
+<script>
+    let form = document.getElementById('exame-form');
+    let toast = document.getElementById('toast');
+    let cancelarBtn = document.getElementById('cancelar');
+    let lastUrl = window.location.pathname.split("/").filter(e => e.length > 0);
+    lastUrl.pop();
+    form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            form.reportValidity();
+            return;
+        }
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+            window.location.href = "/" + lastUrl.join("/");
+        }, 5000);
+    });
 
-    <script>
-        const form = document.getElementById('exame-form');
-        const toast = document.getElementById('toast');
-        const cancelarBtn = document.getElementById('cancelar');
-
-        form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                form.reportValidity();
-                return;
-            }
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 5000);
-        });
-
-        cancelarBtn.addEventListener('click', event => {
-            // Pode implementar ação no botão cancelar, se quiser
-        });
-    </script>
-</body>
+    cancelarBtn.addEventListener("click", event => {
+        event.preventDefault();
+        window.location.href = "/" + lastUrl.join("/");
+    });
+</script>

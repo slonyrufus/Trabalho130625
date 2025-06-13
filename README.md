@@ -62,6 +62,8 @@ Cada profissional de saúde pertence a uma única especialidade
 - Profissional N:1 Especialidade
 ```
 
+![image](https://raw.githubusercontent.com/slonyrufus/Trabalho130625/refs/heads/main/relation.png)
+
 # Modelo
 Movel View Control
 MVC

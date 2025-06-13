@@ -6,14 +6,14 @@
 }
 
 <head>
-    <title>Editar atendimento</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <title>Hospital Vida Plena HOSPISIM - @ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f4f7fb;
-            color: #1e293b;
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
         }
 
         .form-container {
@@ -29,25 +29,93 @@
             margin-bottom: 16px;
         }
 
-            .form-group label {
-                font-weight: 600;
-                margin-bottom: 6px;
-                display: block;
-            }
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+        }
 
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                width: 100%;
-                padding: 12px;
-                border: 1px solid #cbd5e1;
-                border-radius: 8px;
-            }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+        }
 
         .form-actions {
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fb;
+            color: #1e293b;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar main";
+            grid-template-columns: 280px 1fr;
+            grid-template-rows: 60px 1fr;
+            transition: grid-template-columns 0.3s ease;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:focus,
+        button:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        header {
+            grid-area: header;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            color: #f1f5f9;
+            font-weight: 600;
+            font-size: 1.25rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            color: #fbbf24;
+        }
+
+        .logo-text {
+            letter-spacing: 1.2px;
         }
 
         .btn-primary {
@@ -60,186 +128,156 @@
             cursor: pointer;
         }
 
-        .btn-secondary {
-            background: #64748b;
-            color: white;
+        .hamburger {
+            background: none;
             border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 16px;
-            text-decoration: none;
+            color: #f1f5f9;
+            font-size: 32px;
+            display: none;
             cursor: pointer;
         }
 
-        .text-danger {
-            color: #dc2626;
-            font-size: 14px;
+        nav.sidebar {
+            grid-area: sidebar;
+            background: #1e293b;
+            color: #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            transition: transform 0.3s ease, width 0.3s ease;
+            overflow-y: auto;
+            box-shadow: inset -1px 0 0 rgba(255 255 255 / 0.1);
         }
 
-        .toast {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #dc2626;
-            color: white;
-            padding: 16px 24px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
+        nav.sidebar.collapsed {
+            width: 80px;
+        }
+
+        nav.sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav.sidebar li {
+            margin: 0 16px 8px 16px;
+        }
+
+        nav.sidebar li:last-child {
+            margin-bottom: 0;
+        }
+
+        nav.sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        nav.sidebar a:hover,
+        nav.sidebar a:focus {
+            background: #2563eb;
+            color: #e0e7ff;
+        }
+
+        nav.sidebar a .material-icons {
+            font-size: 24px;
+            flex-shrink: 0;
+            color: inherit;
+        }
+
+        nav.sidebar.collapsed a span.label {
             display: none;
         }
 
-            .toast.show {
-                display: block;
-                animation: fadein 0.5s, fadeout 0.5s 4s;
-            }
-        
-
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background: #f4f7fb;
-            color: #1e293b;
-            min-height: 100vh;
-            display: grid;
-            grid-template-areas:
-                "header"
-                "main";
-            grid-template-rows: 60px 1fr;
+        main {
+            grid-area: main;
+            padding: 32px 48px;
+            max-width: 960px;
+            margin: 0 auto;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-            a:focus,
-            button:focus {
-                outline: 2px solid #2563eb;
-                outline-offset: 2px;
-            }
-
-        header {
-            grid-area: header;
-            background: #2563eb;
-            display: flex;
-            align-items: center;
-            padding: 0 24px;
-            color: #f1f5f9;
-            font-weight: 600;
-            font-size: 1.25rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
-            gap: 16px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-shrink: 0;
-        }
-
-        .logo-icon {
-            font-size: 28px;
-            color: #fbbf24;
-        }
-
-        .logo-text {
-            letter-spacing: 1.2px;
-        }
-
-        .header-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-
-        h1 {
-            margin-top: 0;
-            color: #2563eb;
-            font-weight: 700;
-            font-size: 2rem;
-            margin-bottom: 24px;
-        }
-
-        ul.atendimentos-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        li.atendimento-item {
-            padding: 20px 24px;
-            border-radius: 12px;
-            background: #f9fafb;
-            box-shadow: 0 2px 8px rgb(37 99 235 / 0.1);
+        main h1 {
+            font-size: 2.5rem;
             margin-bottom: 16px;
+            color: #1e293b;
+        }
+
+        main p {
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            color: #475569;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px 32px;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 0.05);
+            text-align: center;
             transition: box-shadow 0.3s ease, transform 0.3s ease;
             cursor: pointer;
+            user-select: none;
         }
 
-            li.atendimento-item:hover,
-            li.atendimento-item:focus-within {
-                box-shadow: 0 8px 24px rgb(37 99 235 / 0.3);
-                transform: translateY(-4px);
-                outline: none;
-            }
-
-        a.atendimento-link {
-            display: block;
-            color: inherit;
-            text-decoration: none;
+        .card:hover,
+        .card:focus-within {
+            box-shadow: 0 16px 30px rgb(37 99 235 / 0.3);
+            transform: translateY(-6px);
         }
 
-        .item-header {
+        .card a {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 8px;
+            gap: 16px;
+            color: #1e293b;
         }
 
-        .item-id {
+        .card-icon {
+            font-size: 48px;
+            color: #2563eb;
+            transition: color 0.3s ease;
+        }
+
+        .card a:hover .card-icon {
+            color: #1d4ed8;
+        }
+
+        .card-label {
             font-weight: 600;
             font-size: 1.125rem;
-            color: #1e293b;
-            overflow-wrap: anywhere;
         }
 
-        .item-status {
-            font-weight: 600;
-            color: #2563eb;
-            background: #dbeafe;
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 0.875rem;
-            white-space: nowrap;
+        nav.sidebar::-webkit-scrollbar {
+            width: 8px;
         }
 
-        .item-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 12px 24px;
-            color: #475569;
-            font-size: 0.95rem;
+        nav.sidebar::-webkit-scrollbar-thumb {
+            background: rgba(37, 99, 235, 0.4);
+            border-radius: 4px;
         }
 
-            .item-details span {
-                display: block;
-            }
-
-        .label {
-            font-weight: 600;
-            color: #334155;
-            text-transform: uppercase;
-            margin-bottom: 2px;
-            font-size: 0.75rem;
-            letter-spacing: 0.05em;
+        .sr-only {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
         }
     </style>
 </head>
@@ -248,61 +286,63 @@
         <span class="material-icons logo-icon" aria-hidden="true">local_hospital</span>
         <span class="logo-text">Sistema Hospitalar</span>
     </div>
-    <div class="header-title" aria-live="polite" aria-atomic="true">@ViewBag.Title</div>
+    <button class="hamburger" aria-label="Abrir menu de navegação" aria-controls="sidebar" aria-expanded="false"
+        id="hamburgerButton">
+        <span class="material-icons">menu</span>
+    </button>
 </header>
-
 <nav class="sidebar" id="sidebar" aria-label="Menu principal de navegação">
     <ul>
         <li>
-            <a href="@Url.Action("Index", "Home")" tabindex="0">
+            <a href="/Home/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">home</span>
                 <span class="label">Página Inicial</span>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Paciente")" tabindex="0">
+            <a href="/Paciente/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">people</span>
                 <span class="label">Pacientes</span>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "ProfissionalSaude")" tabindex="0">
+            <a href="/ProfissionalSaude/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">medical_services</span>
                 <span class="label">Profissionais de Saúde</span>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Atendimento")" tabindex="0">
+            <a href="/Atendimento/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">event_note</span>
                 <span class="label">Atendimentos</span>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Internacao")" tabindex="0">
+            <a href="/Internacao/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">hotel</span>
                 <span class="label">Internações</span>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Exame")" tabindex="0">
+            <a href="/Exame/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">science</span>
                 <span class="label">Exames</span>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Prescricao")" tabindex="0">
+            <a href="/Prescricao/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">receipt_long</span>
                 <span class="label">Prescrições</span>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "AltaHospitalar")" tabindex="0">
+            <a href="/AltaHospitalar/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">assignment_turned_in</span>
                 <span class="label">Altas Hospitalares</span>
             </a>
         </li>
         <li>
-            <a href="@Url.Action("Index", "Prontuario")" tabindex="0">
+            <a href="/Prontuario/Index" tabindex="0">
                 <span class="material-icons" aria-hidden="true">folder_shared</span>
                 <span class="label">Prontuários</span>
             </a>
@@ -310,69 +350,155 @@
     </ul>
 </nav>
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="Id" />
+<body>
+    <div class="form-container">
+        <h1>Editar Internação</h1>
+        @using (Html.BeginForm("Edit", "Internacao", FormMethod.Post, new { @id = "internacao-form" }))
+        {
+            @Html.HiddenFor(m => m.Id)
 
-    <div class="form-group">
-        <label asp-for="PacienteId" class="control-label"></label>
-        <input asp-for="PacienteId" class="form-control" />
-        <span asp-validation-for="PacienteId" class="text-danger"></span>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PacienteId, "Paciente:")
+                @Html.DropDownListFor(
+                    m => m.PacienteId,
+                    (SelectList)ViewBag.Pacientes,
+                    "Selecione o paciente",
+                    new { @class = "form-control", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.PacienteId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.AtendimentoId, "Atendimento:")
+                @Html.DropDownListFor(
+                    m => m.AtendimentoId,
+                    (SelectList)ViewBag.Atendimentos,
+                    "Selecione o atendimento",
+                    new { @class = "form-control", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.AtendimentoId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.DataEntrada, "Data de Entrada:")
+                @Html.TextBoxFor(
+                    m => m.DataEntrada,
+                    "{0:yyyy-MM-ddTHH:mm}",
+                    new { @type = "datetime-local", @class = "form-control", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.DataEntrada, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.PrevisaoAlta, "Previsão de Alta:")
+                @Html.TextBoxFor(
+                    m => m.PrevisaoAlta,
+                    "{0:yyyy-MM-ddTHH:mm}",
+                    new { @type = "datetime-local", @class = "form-control" }
+                )
+                @Html.ValidationMessageFor(m => m.PrevisaoAlta, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.MotivoInternacao, "Motivo da Internação:")
+                @Html.TextBoxFor(
+                    m => m.MotivoInternacao,
+                    new { @class = "form-control", placeholder = "Ex: Insuficiência respiratória", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.MotivoInternacao, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Leito, "Leito:")
+                @Html.TextBoxFor(
+                    m => m.Leito,
+                    new { @class = "form-control", placeholder = "Ex: Leito 01", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.Leito, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Quarto, "Quarto:")
+                @Html.TextBoxFor(
+                    m => m.Quarto,
+                    new { @class = "form-control", placeholder = "Ex: Quarto 205", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.Quarto, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Setor, "Setor:")
+                @Html.TextBoxFor(
+                    m => m.Setor,
+                    new { @class = "form-control", placeholder = "Ex: UTI", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.Setor, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.PlanoSaudeUtilizado, "Plano de Saúde Utilizado:")
+                @Html.TextBoxFor(
+                    m => m.PlanoSaudeUtilizado,
+                    new { @class = "form-control", placeholder = "Ex: Unimed, Particular" }
+                )
+                @Html.ValidationMessageFor(m => m.PlanoSaudeUtilizado, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.ObservacoesClinicas, "Observações Clínicas:")
+                @Html.TextAreaFor(
+                    m => m.ObservacoesClinicas,
+                    new { @class = "form-control", rows = 4, placeholder = "Ex: Paciente responde bem à medicação", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.ObservacoesClinicas, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.StatusInternacao, "Status da Internação:")
+                @Html.DropDownListFor(
+                    m => m.StatusInternacao,
+                    new SelectList(new[] { "ATIVA", "ENCERRADA", "TRANSFERIDA" }),
+                    "Selecione o status",
+                    new { @class = "form-control", required = "required", aria_required = "true" }
+                )
+                @Html.ValidationMessageFor(m => m.StatusInternacao, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary" aria-label="Salvar internação">Salvar</button>
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn-secondary", @id = "cancelar", aria_label = "Cancelar" })
+            </div>
+        }
     </div>
 
-    <div class="form-group">
-        <label asp-for="DataEntrada" class="control-label"></label>
-        <input asp-for="DataEntrada" class="form-control" type="date" />
-        <span asp-validation-for="DataEntrada" class="text-danger"></span>
-    </div>
+    <div class="toast" id="toast">Formulário enviado com sucesso!</div>
 
-    <div class="form-group">
-        <label asp-for="PrevisaoAlta" class="control-label"></label>
-        <input asp-for="PrevisaoAlta" class="form-control" type="date" />
-        <span asp-validation-for="PrevisaoAlta" class="text-danger"></span>
-    </div>
+    <script>
+        const form = document.getElementById('internacao-form');
+        const toast = document.getElementById('toast');
+        const cancelarBtn = document.getElementById('cancelar');
 
-    <div class="form-group">
-        <label asp-for="Leito" class="control-label"></label>
-        <input asp-for="Leito" class="form-control" />
-        <span asp-validation-for="Leito" class="text-danger"></span>
-    </div>
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                form.reportValidity();
+                return;
+            }
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+        });
 
-    <div class="form-group">
-        <label asp-for="Quarto" class="control-label"></label>
-        <input asp-for="Quarto" class="form-control" />
-        <span asp-validation-for="Quarto" class="text-danger"></span>
-    </div>
+        cancelarBtn.addEventListener('click', event => {
+            // ação customizada opcional
+        });
+    </script>
+</body>
 
-    <div class="form-group">
-        <label asp-for="Setor" class="control-label"></label>
-        <input asp-for="Setor" class="form-control" />
-        <span asp-validation-for="Setor" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="PlanoSaudeUtilizado" class="control-label"></label>
-        <input asp-for="PlanoSaudeUtilizado" class="form-control" />
-        <span asp-validation-for="PlanoSaudeUtilizado" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="StatusInternacao" class="control-label"></label>
-        <input asp-for="StatusInternacao" class="form-control" />
-        <span asp-validation-for="StatusInternacao" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="ObservacoesClinicas" class="control-label"></label>
-        <textarea asp-for="ObservacoesClinicas" class="form-control"></textarea>
-        <span asp-validation-for="ObservacoesClinicas" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Salvar</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-</form>
 
 <script>
-    const form = document.getElementById('atendimento-form');
+    const form = document.getElementById('internacao-form');
     const toast = document.getElementById('toast');
     const cancelarBtn = document.getElementById('cancelar');
 

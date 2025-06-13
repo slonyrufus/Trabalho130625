@@ -1,0 +1,306 @@
+@model HospitalVidaPlenaHOSPISIM.Models.Internacao
+
+@{
+    ViewBag.Title = "Detalhes sobre internação";
+    Layout = null;
+}
+
+<head>
+    <title>Detalhes da Internação</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fb;
+            color: #1e293b;
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "header"
+                "main";
+            grid-template-rows: 60px 1fr;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:focus,
+        button:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        header {
+            grid-area: header;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            color: #f1f5f9;
+            font-weight: 600;
+            font-size: 1.25rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+            gap: 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            color: #fbbf24;
+        }
+
+        .logo-text {
+            letter-spacing: 1.2px;
+        }
+
+        .header-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        main {
+            grid-area: main;
+            max-width: 900px;
+            margin: 32px auto;
+            background: white;
+            border-radius: 16px;
+            padding: 32px 40px;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .detail-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-value {
+            font-size: 1.125rem;
+            color: #1e293b;
+            word-break: break-word;
+        }
+
+        .section {
+            margin-top: 40px;
+        }
+
+        .section h2 {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 6px;
+        }
+
+        .list {
+            list-style: disc inside;
+            color: #334155;
+            font-size: 1rem;
+            margin: 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<nav class="sidebar" id="sidebar" aria-label="Menu principal de navegação">
+    <ul>
+        <li>
+            <a href="@Url.Action(" Index", "Home" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">home</span>
+                <span class="label">Página Inicial</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "Paciente" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">people</span>
+                <span class="label">Pacientes</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "ProfissionalSaude")" tabindex="0">
+                <span class="material-icons" aria-hidden="true">medical_services</span>
+                <span class="label">Profissionais de Saúde</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Atendimento")" tabindex="0">
+                <span class="material-icons" aria-hidden="true">event_note</span>
+                <span class="label">Atendimentos</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Internacao")" tabindex="0">
+                <span class="material-icons" aria-hidden="true">hotel</span>
+                <span class="label">Internações</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Exame")" tabindex="0">
+                <span class="material-icons" aria-hidden="true">science</span>
+                <span class="label">Exames</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Prescricao")" tabindex="0">
+                <span class="material-icons" aria-hidden="true">receipt_long</span>
+                <span class="label">Prescrições</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "AltaHospitalar")" tabindex="0">
+                <span class="material-icons" aria-hidden="true">assignment_turned_in</span>
+                <span class="label">Altas Hospitalares</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", "Prontuario" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">folder_shared</span>
+                <span class="label">Prontuários</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<body>
+    <header>
+        <div class="logo" tabindex="0">
+            <span class="material-icons logo-icon" aria-hidden="true">local_hospital</span>
+            <span class="logo-text">Sistema Hospitalar</span>
+        </div>
+        <div class="header-title" aria-live="polite" aria-atomic="true">Detalhes da Internação</div>
+    </header>
+
+    <main>
+        <h1>Internação #@Model.Id</h1>
+
+        <ul class="detail-list" role="list">
+            <li class="detail-item">
+                <span class="detail-label">Data de Entrada</span>
+                <span class="detail-value">@Model.DataEntrada.ToString("yyyy-MM-dd")</span>
+            </li>
+
+            <li class="detail-item">
+                <span class="detail-label">Previsão de Alta</span>
+                <span class="detail-value">
+                    @(Model.PrevisaoAlta.HasValue ? Model.PrevisaoAlta.Value.ToString("yyyy-MM-dd") : "Não informada")
+                </span>
+            </li>
+
+            <li class="detail-item">
+                <span class="detail-label">Motivo da Internação</span>
+                <span class="detail-value">@Model.MotivoInternacao</span>
+            </li>
+
+            <li class="detail-item">
+                <span class="detail-label">Leito</span>
+                <span class="detail-value">@Model.Leito</span>
+            </li>
+
+            <li class="detail-item">
+                <span class="detail-label">Quarto</span>
+                <span class="detail-value">@Model.Quarto</span>
+            </li>
+
+            <li class="detail-item">
+                <span class="detail-label">Setor</span>
+                <span class="detail-value">@Model.Setor</span>
+            </li>
+
+            <li class="detail-item">
+                <span class="detail-label">Plano de Saúde Utilizado</span>
+                <span class="detail-value">@(!string.IsNullOrWhiteSpace(Model.PlanoSaudeUtilizado) ? Model.PlanoSaudeUtilizado : "Não informado")</span>
+            </li>
+
+            <li class="detail-item">
+                <span class="detail-label">Observações Clínicas</span>
+                <span class="detail-value">@Model.ObservacoesClinicas</span>
+            </li>
+
+            <li class="detail-item">
+                <span class="detail-label">Status da Internação</span>
+                <span class="detail-value">@Model.StatusInternacao</span>
+            </li>
+
+            <li class="detail-item" style="grid-column: span 2;">
+                <span class="detail-label">Paciente</span>
+                <span class="detail-value">@Model.Paciente?.NomeCompleto ?? "Não informado"</span>
+            </li>
+
+            <li class="detail-item" style="grid-column: span 2;">
+                <span class="detail-label">Atendimento</span>
+                <span class="detail-value">
+                    @if (Model.Atendimento != null)
+                    {
+                        <text>Atendimento #@Model.Atendimento.Id</text>
+                    }
+                    else
+                    {
+                        <text>Não informado</text>
+                    }
+                </span>
+            </li>
+
+            <li class="detail-item" style="grid-column: span 2;">
+                <span class="detail-label">Alta Hospitalar</span>
+                <span class="detail-value">
+                    @if (Model.AltaHospitalar != null)
+                    {
+                        <text>Alta em @Model.AltaHospitalar.Data.ToString("yyyy-MM-dd")</text>
+                    }
+                    else
+                    {
+                        <text>Paciente ainda internado</text>
+                    }
+                </span>
+            </li>
+        </ul>
+    </main>
+</body>

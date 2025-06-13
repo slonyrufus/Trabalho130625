@@ -1,0 +1,214 @@
+@model HospitalVidaPlenaHOSPISIM.Models.Atendimento
+
+@{
+    ViewBag.Title = "Detalhes sobre atendimento";
+    Layout = null;
+}
+
+<head>
+    <title>Detalhes do Atendimento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fb;
+            color: #1e293b;
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "header"
+                "main";
+            grid-template-rows: 60px 1fr;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:focus,
+        button:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        header {
+            grid-area: header;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            color: #f1f5f9;
+            font-weight: 600;
+            font-size: 1.25rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+            gap: 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            color: #fbbf24;
+        }
+
+        .logo-text {
+            letter-spacing: 1.2px;
+        }
+
+        .header-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        main {
+            grid-area: main;
+            max-width: 900px;
+            margin: 32px auto;
+            background: white;
+            border-radius: 16px;
+            padding: 32px 40px;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            margin-top: 0;
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .detail-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-value {
+            font-size: 1.125rem;
+            color: #1e293b;
+            word-break: break-word;
+        }
+
+        .section {
+            margin-top: 40px;
+        }
+
+        .section h2 {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #2563eb;
+            padding-bottom: 6px;
+        }
+
+        .list {
+            list-style: disc inside;
+            color: #334155;
+            font-size: 1rem;
+            margin: 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" tabindex="0">
+            <span class="material-icons logo-icon" aria-hidden="true">local_hospital</span>
+            <span class="logo-text">Sistema Hospitalar</span>
+        </div>
+        <div class="header-title" aria-live="polite" aria-atomic="true">Detalhes do Atendimento</div>
+    </header>
+
+    <main>
+        <h1>Atendimento #123e4567-e89b-12d3-a456-426614174000</h1>
+
+        <ul class="detail-list" role="list">
+            <li class="detail-item">
+                <span class="detail-label">Data e Hora</span>
+                <span class="detail-value">2024-06-26 14:30</span>
+            </li>
+            <li class="detail-item">
+                <span class="detail-label">Tipo</span>
+                <span class="detail-value">Consulta</span>
+            </li>
+            <li class="detail-item">
+                <span class="detail-label">Status</span>
+                <span class="detail-value">Concluído</span>
+            </li>
+            <li class="detail-item">
+                <span class="detail-label">Local</span>
+                <span class="detail-value">Unidade Central - Sala 12</span>
+            </li>
+            <li class="detail-item" style="grid-column: span 2;">
+                <span class="detail-label">Prontuário</span>
+                <span class="detail-value">Paciente: João Silva (ID: a12bc3d4-e56f-789g-012h-345ij678kl90)</span>
+            </li>
+            <li class="detail-item" style="grid-column: span 2;">
+                <span class="detail-label">Profissional de Saúde</span>
+                <span class="detail-value">Dra. Maria Almeida - Cardiologista (ID:
+                    9m8no7p6-q5r4-321s-t0uv-wxyz12345678)</span>
+            </li>
+        </ul>
+
+        <section class="section" aria-labelledby="prescricoes-title">
+            <h2 id="prescricoes-title">Prescrições</h2>
+            <ul class="list" role="list">
+                <li>Losartana 50mg - 1 vez ao dia</li>
+                <li>Dipirona 500mg - 3 vezes ao dia</li>
+            </ul>
+        </section>
+
+        <section class="section" aria-labelledby="exames-title">
+            <h2 id="exames-title">Exames</h2>
+            <ul class="list" role="list">
+                <li>Hemograma Completo - Resultado normal</li>
+                <li>ECG - Alterações leves</li>
+            </ul>
+        </section>
+
+        <section class="section" aria-labelledby="internacao-title">
+            <h2 id="internacao-title">Internação</h2>
+            <p>Nenhuma internação vinculada a este atendimento.</p>
+        </section>
+    </main>
+</body>

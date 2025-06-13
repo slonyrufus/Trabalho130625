@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Swagger HOSPISIM",
+    "description": "Sistema Swagger HOSPISIM",
+    "contact": {
+      "name": "API de Hospital HOSPISIM",
+      "url": "https://unitins.br",
+      "email": "silvasena@unitins.br"
+    }
+  },
+  "paths": {
+    "/ProfissionalSaude": {
+      "get": {
+        "tags": [
+          "ProfissionalSaude"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Details": {
+      "get": {
+        "tags": [
+          "ProfissionalSaude"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Create": {
+      "get": {
+        "tags": [
+          "ProfissionalSaude"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

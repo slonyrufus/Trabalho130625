@@ -1,0 +1,65 @@
+@model HospitalVidaPlenaHOSPISIM.Models.Paciente
+
+<div class="form-group">
+    <label asp-for="NomeCompleto"></label>
+    <input asp-for="NomeCompleto" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="CPF"></label>
+    <input asp-for="CPF" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="DataNascimento"></label>
+    <input asp-for="DataNascimento" type="date" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Sexo"></label>
+    <select asp-for="Sexo" class="form-control">
+        <option>Masculino</option>
+        <option>Feminino</option>
+        <option>Outro</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label asp-for="TipoSanguineo"></label>
+    <input asp-for="TipoSanguineo" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Telefone"></label>
+    <input asp-for="Telefone" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Email"></label>
+    <input asp-for="Email" type="email" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="EnderecoCompleto"></label>
+    <input asp-for="EnderecoCompleto" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="NumeroCartaoSUS"></label>
+    <input asp-for="NumeroCartaoSUS" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="EstadoCivil"></label>
+    <select asp-for="EstadoCivil" class="form-control">
+        <option>Solteiro</option>
+        <option>Casado</option>
+        <option>Divorciado</option>
+        <option>Viúvo</option>
+    </select>
+</div>
+
+<div class="form-group form-check">
+    <input asp-for="PossuiPlanoSaude" class="form-check-input" />
+    <label asp-for="PossuiPlanoSaude" class="form-check-label"></label>
+</div>

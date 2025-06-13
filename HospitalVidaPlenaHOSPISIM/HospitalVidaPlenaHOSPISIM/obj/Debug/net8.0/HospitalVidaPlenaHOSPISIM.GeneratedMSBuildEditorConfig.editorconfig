@@ -1,0 +1,217 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HospitalVidaPlenaHOSPISIM
+build_property.RootNamespace = HospitalVidaPlenaHOSPISIM
+build_property.ProjectDir = C:\Users\Slony\source\repos\HospitalVidaPlenaHOSPISIM\HospitalVidaPlenaHOSPISIM\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Slony\source\repos\HospitalVidaPlenaHOSPISIM\HospitalVidaPlenaHOSPISIM
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/AltaHospitalar/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YUhvc3BpdGFsYXJcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/AltaHospitalar/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YUhvc3BpdGFsYXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/AltaHospitalar/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YUhvc3BpdGFsYXJcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/AltaHospitalar/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YUhvc3BpdGFsYXJcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/AltaHospitalar/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx0YUhvc3BpdGFsYXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Atendimento/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Atendimento/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Atendimento/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Atendimento/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Atendimento/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXRlbmRpbWVudG9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Exame/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Exame/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Exame/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Exame/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Exame/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhhbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Internacao/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Internacao/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Internacao/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Internacao/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Internacao/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJuYWNhb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Paciente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Paciente/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Paciente/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Paciente/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Paciente/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prescricao/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prescricao/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prescricao/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prescricao/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prescricao/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc2NyaWNhb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/ProfissionalSaude/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsU2F1ZGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/ProfissionalSaude/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsU2F1ZGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/ProfissionalSaude/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsU2F1ZGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/ProfissionalSaude/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsU2F1ZGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/ProfissionalSaude/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmlzc2lvbmFsU2F1ZGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prontuario/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prontuario/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prontuario/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prontuario/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Prontuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbnR1YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Shared/_PacienteForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWNpZW50ZUZvcm0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Shared/_ProfissionalForm.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9maXNzaW9uYWxGb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Slony/source/repos/HospitalVidaPlenaHOSPISIM/HospitalVidaPlenaHOSPISIM/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-umv946tppy

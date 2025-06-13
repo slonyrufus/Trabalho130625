@@ -1,0 +1,65 @@
+@model HospitalVidaPlenaHOSPISIM.Models.ProfissionalSaude
+
+<div class="form-group">
+    <label asp-for="NomeCompleto"></label>
+    <input asp-for="NomeCompleto" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="CPF"></label>
+    <input asp-for="CPF" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Email"></label>
+    <input asp-for="Email" type="email" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Telefone"></label>
+    <input asp-for="Telefone" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="RegistroConselho"></label>
+    <input asp-for="RegistroConselho" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="TipoRegistro"></label>
+    <select asp-for="TipoRegistro" class="form-control">
+        <option>CRM</option>
+        <option>COREN</option>
+        <option>CRP</option>
+        <option>Outros</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label asp-for="EspecialidadeId"></label>
+    <input asp-for="EspecialidadeId" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="DataAdmissao"></label>
+    <input asp-for="DataAdmissao" type="date" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="CargaHorariaSemanal"></label>
+    <input asp-for="CargaHorariaSemanal" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Turno"></label>
+    <select asp-for="Turno" class="form-control">
+        <option>Manhã</option>
+        <option>Tarde</option>
+        <option>Noite</option>
+    </select>
+</div>
+
+<div class="form-group form-check">
+    <input asp-for="Ativo" class="form-check-input" />
+    <label asp-for="Ativo" class="form-check-label"></label>
+</div>

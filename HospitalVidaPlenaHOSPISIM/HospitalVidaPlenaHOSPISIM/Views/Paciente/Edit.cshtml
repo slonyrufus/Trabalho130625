@@ -1,0 +1,408 @@
+@model HospitalVidaPlenaHOSPISIM.Models.Paciente
+
+@{
+    ViewBag.Title = "Editar paciente";
+    Layout = null;
+}
+
+<head>
+    <title>Hospital Vida Plena HOSPISIM - Página Inicial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fb;
+            color: #1e293b;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "sidebar main";
+            grid-template-columns: 280px 1fr;
+            grid-template-rows: 60px 1fr;
+            transition: grid-template-columns 0.3s ease;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        a:focus,
+        button:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        header {
+            grid-area: header;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            color: #f1f5f9;
+            font-weight: 600;
+            font-size: 1.25rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            color: #fbbf24;
+        }
+
+        .logo-text {
+            letter-spacing: 1.2px;
+        }
+
+        .hamburger {
+            background: none;
+            border: none;
+            color: #f1f5f9;
+            font-size: 32px;
+            display: none;
+            cursor: pointer;
+        }
+
+        nav.sidebar {
+            grid-area: sidebar;
+            background: #1e293b;
+            color: #cbd5e1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            transition: transform 0.3s ease, width 0.3s ease;
+            overflow-y: auto;
+            box-shadow: inset -1px 0 0 rgba(255 255 255 / 0.1);
+        }
+
+        nav.sidebar.collapsed {
+            width: 80px;
+        }
+
+        nav.sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav.sidebar li {
+            margin: 0 16px 8px 16px;
+        }
+
+        nav.sidebar li:last-child {
+            margin-bottom: 0;
+        }
+
+        nav.sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        nav.sidebar a:hover,
+        nav.sidebar a:focus {
+            background: #2563eb;
+            color: #e0e7ff;
+        }
+
+        nav.sidebar a .material-icons {
+            font-size: 24px;
+            flex-shrink: 0;
+            color: inherit;
+        }
+
+        nav.sidebar.collapsed a span.label {
+            display: none;
+        }
+
+        main {
+            grid-area: main;
+            padding: 32px 48px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        main h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: #1e293b;
+        }
+
+        main p {
+            font-size: 1.125rem;
+            margin-bottom: 32px;
+            color: #475569;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px 32px;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 0.05);
+            text-align: center;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .card:hover,
+        .card:focus-within {
+            box-shadow: 0 16px 30px rgb(37 99 235 / 0.3);
+            transform: translateY(-6px);
+        }
+
+        .card a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            color: #1e293b;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            color: #2563eb;
+            transition: color 0.3s ease;
+        }
+
+        .card a:hover .card-icon {
+            color: #1d4ed8;
+        }
+
+        .card-label {
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        nav.sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        nav.sidebar::-webkit-scrollbar-thumb {
+            background: rgba(37, 99, 235, 0.4);
+            border-radius: 4px;
+        }
+
+        .sr-only {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+    </style>
+</head>
+
+    <header>
+        <div class="logo" tabindex="0">
+            <span class="material-icons logo-icon" aria-hidden="true">local_hospital</span>
+            <span class="logo-text">Sistema Hospitalar</span>
+        </div>
+        <button class="hamburger" aria-label="Abrir menu de navegação" aria-controls="sidebar" aria-expanded="false"
+            id="hamburgerButton">
+            <span class="material-icons">menu</span>
+        </button>
+    </header>
+
+
+<nav class="sidebar" id="sidebar" aria-label="Menu principal de navegação">
+    <ul>
+        <li>
+            <a href="@Url.Action(" Index", "Home" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">home</span>
+                <span class="label">Página Inicial</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "Paciente" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">people</span>
+                <span class="label">Pacientes</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "ProfissionalSaude" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">medical_services</span>
+                <span class="label">Profissionais de Saúde</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "Atendimento" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">event_note</span>
+                <span class="label">Atendimentos</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "Internacao" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">hotel</span>
+                <span class="label">Internações</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "Exame" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">science</span>
+                <span class="label">Exames</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "Prescricao" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">receipt_long</span>
+                <span class="label">Prescrições</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "AltaHospitalar" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">assignment_turned_in</span>
+                <span class="label">Altas Hospitalares</span>
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action(" Index", "Prontuario" )" tabindex="0">
+                <span class="material-icons" aria-hidden="true">folder_shared</span>
+                <span class="label">Prontuários</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<body>
+    <div class="form-container">
+        <h1>Editar Paciente</h1>
+        @using (Html.BeginForm("Edit", "Paciente", FormMethod.Post, new { @id = "paciente-form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.NomeCompleto, "Nome Completo:")
+                @Html.TextBoxFor(m => m.NomeCompleto, new { @class = "form-control", required = "required", aria_required = "true" })
+                @Html.ValidationMessageFor(m => m.NomeCompleto, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.CPF, "CPF:")
+                @Html.TextBoxFor(m => m.CPF, new { @class = "form-control", placeholder = "000.000.000-00", required = "required", aria_required = "true" })
+                @Html.ValidationMessageFor(m => m.CPF, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.DataNascimento, "Data de Nascimento:")
+                @Html.TextBoxFor(m => m.DataNascimento, "{0:yyyy-MM-dd}", new { @type = "date", @class = "form-control", required = "required", aria_required = "true" })
+                @Html.ValidationMessageFor(m => m.DataNascimento, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Sexo, "Sexo:")
+                @Html.DropDownListFor(m => m.Sexo, new SelectList(new[] { "Masculino", "Feminino", "Outro" }), "Selecione o sexo", new { @class = "form-control", required = "required", aria_required = "true" })
+                @Html.ValidationMessageFor(m => m.Sexo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.TipoSanguineo, "Tipo Sanguíneo:")
+                @Html.TextBoxFor(m => m.TipoSanguineo, new { @class = "form-control", placeholder = "Ex: A+, O-", required = "required", aria_required = "true" })
+                @Html.ValidationMessageFor(m => m.TipoSanguineo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Telefone, "Telefone:")
+                @Html.TextBoxFor(m => m.Telefone, new { @class = "form-control", placeholder = "(99) 99999-9999", required = "required", aria_required = "true" })
+                @Html.ValidationMessageFor(m => m.Telefone, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, "E-mail:")
+                @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "form-control", placeholder = "email@exemplo.com", required = "required", aria_required = "true" })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.EnderecoCompleto, "Endereço Completo:")
+                @Html.TextBoxFor(m => m.EnderecoCompleto, new { @class = "form-control", placeholder = "Rua, Número, Bairro, Cidade, Estado", required = "required", aria_required = "true" })
+                @Html.ValidationMessageFor(m => m.EnderecoCompleto, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.NumeroCartaoSUS, "Número do Cartão SUS:")
+                @Html.TextBoxFor(m => m.NumeroCartaoSUS, new { @class = "form-control", placeholder = "Número do cartão SUS" })
+                @Html.ValidationMessageFor(m => m.NumeroCartaoSUS, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.EstadoCivil, "Estado Civil:")
+                @Html.TextBoxFor(m => m.EstadoCivil, new { @class = "form-control", placeholder = "Ex: Solteiro(a), Casado(a)" })
+                @Html.ValidationMessageFor(m => m.EstadoCivil, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group form-check">
+                @Html.CheckBoxFor(m => m.PossuiPlanoSaude, new { @class = "form-check-input", id = "planoSaude" })
+                <label class="form-check-label" for="planoSaude">Possui Plano de Saúde</label>
+                @Html.ValidationMessageFor(m => m.PossuiPlanoSaude, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary" aria-label="Salvar alterações do paciente">Salvar</button>
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn-secondary", @id = "cancelar", aria_label = "Cancelar" })
+            </div>
+        }
+    </div>
+
+    <div class="toast" id="toast">Paciente atualizado com sucesso!</div>
+
+    <script>
+        const form = document.getElementById('paciente-form');
+        const toast = document.getElementById('toast');
+        const cancelarBtn = document.getElementById('cancelar');
+
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                form.reportValidity();
+                return;
+            }
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+        });
+
+        cancelarBtn.addEventListener('click', event => {
+
+        });
+    </script>
+</body>

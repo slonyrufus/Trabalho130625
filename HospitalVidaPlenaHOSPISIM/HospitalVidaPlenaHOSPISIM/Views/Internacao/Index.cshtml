@@ -1,0 +1,157 @@
+@model IEnumerable<HospitalVidaPlenaHOSPISIM.Models.Internacao>
+
+@{
+    ViewBag.Title = "Internações";
+    Layout = null;
+}
+
+<head>
+    <title>Lista de Internações</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f4f7fb;
+            color: #1e293b;
+            min-height: 100vh;
+            display: grid;
+            grid-template-areas: "header" "main";
+            grid-template-rows: 60px 1fr;
+        }
+
+        header {
+            grid-area: header;
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            color: #f1f5f9;
+            font-weight: 600;
+            font-size: 1.25rem;
+            box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+            gap: 16px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            color: #fbbf24;
+        }
+
+        main {
+            grid-area: main;
+            max-width: 960px;
+            margin: 32px auto;
+            background: white;
+            border-radius: 16px;
+            padding: 32px 40px;
+            box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        ul.internacoes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        li.internacao-item {
+            padding: 20px;
+            border-radius: 12px;
+            background: #f9fafb;
+            box-shadow: 0 2px 8px rgb(37 99 235 / 0.1);
+            margin-bottom: 16px;
+            transition: 0.3s ease;
+        }
+
+            li.internacao-item:hover {
+                box-shadow: 0 8px 24px rgb(37 99 235 / 0.3);
+                transform: translateY(-4px);
+            }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .item-id {
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .item-status {
+            font-weight: 600;
+            background: #dbeafe;
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 0.875rem;
+        }
+
+        .item-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px 24px;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #334155;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><span class="material-icons logo-icon">local_hospital</span><span>Hospital</span></div>
+        <div class="header-title">Lista de Internações</div>
+    </header>
+    <main>
+        <h1>Internações</h1>
+        <ul class="internacoes-list">
+            @foreach (var item in Model)
+            {
+                <li class="internacao-item">
+                    <a href="@Url.Action("Edit", new { id = item.Id })" style="text-decoration: none; color: inherit;">
+                        <div class="item-header">
+                            <span class="item-id">ID: @item.Id</span>
+                            <span class="item-status">@item.StatusInternacao</span>
+                        </div>
+                        <div class="item-details">
+                            <span><span class="label">Data Entrada</span>@item.DataEntrada.ToShortDateString()</span>
+                            <span><span class="label">Previsão Alta</span>@(item.PrevisaoAlta?.ToShortDateString() ?? "-")</span>
+                            <span><span class="label">Motivo</span>@item.MotivoInternacao</span>
+                            <span><span class="label">Leito</span>@item.Leito</span>
+                            <span><span class="label">Quarto</span>@item.Quarto</span>
+                            <span><span class="label">Setor</span>@item.Setor</span>
+                            <span><span class="label">Plano de Saúde</span>@(item.PlanoSaudeUtilizado ?? "Não informado")</span>
+                            <span><span class="label">Paciente</span>@item.Paciente?.NomeCompleto</span>
+                            <span><span class="label">Atendimento</span>@item.AtendimentoId</span>
+                        </div>
+                    </a>
+                </li>
+            }
+        </ul>
+    </main>
+</body>
